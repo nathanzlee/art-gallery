@@ -89,7 +89,6 @@ export default function Example() {
                   <span className="sr-only">View adlkfjakdfj for {file.title}</span>
                 </button>
               </div>
-              <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">{"Hello!"}</p>
             </li>
           ))}
         </ul>
