@@ -1,4 +1,3 @@
-import useSound from 'use-sound'
 import { useState, useRef, Fragment } from 'react'
 import AudioPlayer from '../components/audioPlayer'
 import { Dialog, Transition } from '@headlessui/react'
