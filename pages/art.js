@@ -6,57 +6,171 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 const files = [
   {
     title: 'Picture 1',
+    video: false,
     source:
-      '/images/pic1.jpeg',
-    audio: '/audio/audio1.mp3'
+      '/images/pic10.jpeg',
+    audio: ''
   },
   {
     title: 'Picture 2',
+    video: false,
     source:
-      '/images/pic2.jpeg',
-    audio: '/audio/audio2.mp3'
+      '/images/pic11.jpg',
+    audio: ''
   },
   {
     title: 'Picture 3',
+    video: false,
     source:
-      '/images/pic3.jpeg',
-    audio: '/audio/audio36.mp3'
+      '/images/pic12.jpeg',
+    audio: ''
   },
   {
     title: 'Picture 4',
+    video: false,
     source:
-      '/images/pic4.jpeg',
-    audio: '/audio/audio4.mp3'
+      '/images/pic13.jpeg',
+    audio: ''
   },
   {
     title: 'Picture 5',
+    video: false,
     source:
-      '/images/pic5.jpeg',
-    audio: '/audio/audio5.mp3'
+      '/images/pic14.jpg',
+    audio: ''
   },
   {
     title: 'Picture 6',
+    video: false,
     source:
-      '/images/pic6.jpeg',
-    audio: '/audio/audio36.mp3'
+      '/images/pic15.jpeg',
+    audio: ''
   },
   {
     title: 'Picture 7',
+    video: false,
     source:
-      '/images/pic7.jpeg',
-    audio: '/audio/audio7.mp3'
+      '/images/pic16.jpeg',
+    audio: ''
   },
   {
     title: 'Picture 8',
+    video: false,
     source:
-      '/images/pic8.jpeg',
-    audio: '/audio/audio8.mp3'
+      '/images/pic17.png',
+    audio: ''
   },
   {
     title: 'Picture 9',
+    video: false,
     source:
-      '/images/pic9.jpeg',
-    audio: '/audio/audio9.mp3'
+      '/images/pic18.jpeg',
+    audio: ''
+  },
+  {
+    title: 'Picture 10',
+    video: false,
+    source:
+      '/images/pic19.jpeg',
+    audio: ''
+  },
+  {
+    title: 'Picture 11',
+    video: false,
+    source:
+      '/images/pic20.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 12',
+    video: false,
+    source:
+      '/images/pic21.jpg',
+    audio: ''
+  },
+  {
+    title: 'Picture 13',
+    video: false,
+    source:
+      '/images/pic22.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 14',
+    video: false,
+    source:
+      '/images/pic23.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 15',
+    video: false,
+    source:
+      '/images/pic24.jpeg',
+    audio: ''
+  },
+  {
+    title: 'Picture 16',
+    video: false,
+    source:
+      '/images/pic25.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 17',
+    video: false,
+    source:
+      '/images/pic26.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 18',
+    video: false,
+    source:
+      '/images/pic27.jpeg',
+    audio: ''
+  },
+  {
+    title: 'Picture 19',
+    video: false,
+    source:
+      '/images/pic28.jpeg',
+    audio: ''
+  },
+  {
+    title: 'Picture 20',
+    video: false,
+    source:
+      '/images/pic29.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 21',
+    video: false,
+    source:
+      '/images/pic30.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 22',
+    video: false,
+    source:
+      '/images/pic31.png',
+    audio: ''
+  },
+  {
+    title: 'Picture 23',
+    video: true,
+    source:
+      '/images/vid1.mp4',
+    audio: ''
+  },
+  {
+    title: 'Picture 24',
+    video: true,
+    source:
+      '/images/vid2.mp4',
+    audio: ''
   },
 ]
 
@@ -65,6 +179,7 @@ export default function Example() {
   // const [hoverImgSrc, setHoverImgSrc] = useState('')
   // const [imgAudio, setImgAudio] = useState('')
   const [currentImg, setCurrentImg] = useState({
+    video: false,
     source: '',
     audio: '/audio/ali.mp3'
   })
@@ -98,7 +213,15 @@ export default function Example() {
                 setCurrentImg(file)
                 setPlaySubmitSound(true)
               }} className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-                <img src={file.source} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                {
+                  (file.video) ? (
+                    <video autoplay className="pointer-events-none object-cover group-hover:opacity-75">
+                      <source src={file.source} type="video/mp4" />
+                    </video>
+                   ) : (
+                    <img src={file.source} alt="" className="pointer-events-none object-cover group-hover:opacity-75" />
+                   )
+                }
                 <button type="button" className="absolute inset-0 focus:outline-none">
                   <span className="sr-only">View adlkfjakdfj for {file.title}</span>
                 </button>
@@ -158,7 +281,16 @@ export default function Example() {
                                     {/* <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
                                     New User
                                     </Dialog.Title> */}
-                                    <img src={(currentImg) ? currentImg.source : ''}></img>
+                                    {
+                                      (currentImg.video) ? (
+                                        <video autoplay className="pointer-events-none object-cover group-hover:opacity-75">
+                                        <source src={(currentImg) ? currentImg.source : ''} type="video/mp4" />
+                                      </video>
+                                      ) : (
+                                        <img src={(currentImg) ? currentImg.source : ''}></img>
+                                      )
+                                    }
+                                    
                                 </div>
                             </div>
                           {/* <button
