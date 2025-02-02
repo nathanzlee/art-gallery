@@ -215,7 +215,7 @@ export default function Example() {
               }} className="group aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
                 {
                   (file.video) ? (
-                    <video autoplay className="pointer-events-none object-cover group-hover:opacity-75">
+                    <video autoPlay className="pointer-events-none object-cover group-hover:opacity-75">
                       <source src={file.source} type="video/mp4" />
                     </video>
                    ) : (
@@ -283,7 +283,7 @@ export default function Example() {
                                     </Dialog.Title> */}
                                     {
                                       (currentImg.video) ? (
-                                        <video autoplay className="pointer-events-none object-cover group-hover:opacity-75">
+                                        <video autoPlay className="pointer-events-none object-cover group-hover:opacity-75">
                                         <source src={(currentImg) ? currentImg.source : ''} type="video/mp4" />
                                       </video>
                                       ) : (
